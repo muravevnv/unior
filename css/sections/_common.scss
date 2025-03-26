@@ -1,0 +1,33 @@
+
+.button_outline {
+  background-color: transparent;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.cont-block__header {
+
+  @media(max-width: 767.98px) {
+    gap: 16px;
+  }
+}
+
+.swiper-pagination {
+  position: static;
+  margin-top: 30px;
+
+  @media(max-width: 559.98px) {
+    margin-top: 20px;
+  }
+
+  &-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
+    opacity: 1;
+  }
+
+  &-bullet-active {
+    background-color: #0077C1;
+  }
+}
