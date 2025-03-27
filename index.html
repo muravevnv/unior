@@ -69,8 +69,10 @@
                 </p>
               </div>
               <div class="career-about__actions">
-                <a href="#" class="button button_outline main-color_blue-2">Ассортимент</a>
-                <a href="#" class="button main-color_blue-2">Наши клиенты</a>
+                <button type="button" class="button button_outline main-color_blue-2 _is-active tab-btn"
+                  data-tab="assortiment">Ассортимент</button>
+                <button type="button" class="button button_outline main-color_blue-2 tab-btn" data-tab="clients">Наши
+                  клиенты</button>
               </div>
             </div>
             <picture class="career-about__img">
@@ -78,64 +80,115 @@
             </picture>
           </div>
           <div class="career-about__profiles">
-            <div class="career-about__profiles-slider js-profiles-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/oil-station.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Нефтегазовая отрасль</div>
+            <div class="career-about__profiles-content tab-pane _is-active" data-tab="assortiment">
+              <div class="career-about__profiles-slider js-profiles-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/oil-station.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Нефтегазовая отрасль</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/fossil-fuel.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Горнодобыча</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/car-manufactoring.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Машиностроение</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/air-force.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Авиастроение</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/car-repair.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Автомобилестроение</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/transportation.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Транспорт</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/atomic-energy.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Энергетика</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/person.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Металлургия</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/ship.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Судостроение</div>
+                  </div>
                 </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/fossil-fuel.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Горнодобыча</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/car-manufactoring.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Машиностроение</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/air-force.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Авиастроение</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/car-repair.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Автомобилестроение</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/transportation.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Транспорт</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/atomic-energy.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Энергетика</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/person.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Металлургия</div>
-                </div>
-                <div class="swiper-slide career-profile-card">
-                  <picture class="career-profile-card__img">
-                    <img src="./local/templates/unior-new/images/career/ship.svg" alt="">
-                  </picture>
-                  <div class="career-profile-card__title">Судостроение</div>
-                </div>
+                <div class="swiper-pagination js-profiles-slider-pagination"></div>
               </div>
-              <div class="swiper-pagination js-profiles-slider-pagination"></div>
+            </div>
+            <div class="career-about__profiles-content tab-pane" data-tab="clients">
+              <div class="career-about__profiles-slider js-profiles-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/toolbox.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Ручной <br> инструмент</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/materials.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Абразивные <br> материалы</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/instruments.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Пневматика <br> и гидравлика</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/cabinet.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Инструментальная <br> мебель</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/work-space.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Проектирование <br> рабочих мест</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/tools.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Ремонт и аренда <br> оборудования</div>
+                  </div>
+                  <div class="swiper-slide career-profile-card">
+                    <picture class="career-profile-card__img">
+                      <img src="./local/templates/unior-new/images/career/service.svg" alt="">
+                    </picture>
+                    <div class="career-profile-card__title">Сервисное <br> обслуживание</div>
+                  </div>
+                </div>
+                <div class="swiper-pagination js-profiles-slider-pagination"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -148,36 +201,36 @@
           <a class="button main-color_red" href="#"> Мы на hh.ru</a>
         </div>
         <div class="career-stats">
-          <div class="career-stats__section">
+          <div class="career-stats__section js-stats-section">
             <div class="career-stats__title">UNIOR в мире</div>
             <div class="career-stats__items">
               <div class="career-stats-item">
-                <div class="career-stats-item__num">100+</div>
+                <div class="career-stats-item__num"><span class="js-stats-number" data-value="100">0</span><span>+</span></div>
                 <div class="career-stats-item__title">лет опыта производства</div>
               </div>
               <div class="career-stats-item">
-                <div class="career-stats-item__num">120</div>
+                <div class="career-stats-item__num"><span class="js-stats-number" data-value="120">0</span></div>
                 <div class="career-stats-item__title">стран на 5 континентах</div>
               </div>
               <div class="career-stats-item">
-                <div class="career-stats-item__num">1 600+</div>
+                <div class="career-stats-item__num"><span class="js-stats-number" data-value="1600">0</span><span>+</span></div>
                 <div class="career-stats-item__title">сотрудников по всему миру</div>
               </div>
             </div>
           </div>
-          <div class="career-stats__section">
+          <div class="career-stats__section js-stats-section">
             <div class="career-stats__title">UNIOR в России</div>
             <div class="career-stats__items">
               <div class="career-stats-item">
-                <div class="career-stats-item__num">20+</div>
+                <div class="career-stats-item__num"><span class="js-stats-number" data-value="20">0</span><span>+</span></div>
                 <div class="career-stats-item__title">лет на рынке</div>
               </div>
               <div class="career-stats-item">
-                <div class="career-stats-item__num">1 500</div>
+                <div class="career-stats-item__num"><span class="js-stats-number" data-value="1500">0</span></div>
                 <div class="career-stats-item__title">клиентов</div>
               </div>
               <div class="career-stats-item">
-                <div class="career-stats-item__num">15 000+</div>
+                <div class="career-stats-item__num"><span class="js-stats-number" data-value="15000">0</span><span>+</span></div>
                 <div class="career-stats-item__title">SKU</div>
               </div>
             </div>

@@ -71,24 +71,93 @@ document.addEventListener("DOMContentLoaded", () => {
         zoom: 17,
       });
 
-      myMap.geoObjects.add(new ymaps.Placemark(
-        [59.875113, 30.337751],
-        {iconContent: '', hintContent: 'Униор Профешнл Тулз'}
-    ));
+      myMap.geoObjects.add(
+        new ymaps.Placemark([59.875113, 30.337751], {
+          iconContent: "",
+          hintContent: "Униор Профешнл Тулз",
+        })
+      );
     }
   }
 
-  $('.accordion-header').click(function() {
+  $(".accordion-header").click(function () {
     // Закрываем все, кроме текущего
-    $('.accordion-content').not($(this).next()).slideUp();
-    
+    $(".accordion-content").not($(this).next()).slideUp();
+
     // Открываем/закрываем текущий
-    $(this).parent().toggleClass('_is-open');
-    $(this).next('.accordion-content').slideToggle();
-    
+    $(this).parent().toggleClass("_is-open");
+    $(this).next(".accordion-content").slideToggle();
   });
 
-  $('.js-hidden-block-btn').click(function() {
-    $(this).prev('.js-hidden-block').toggleClass('_is-open');
-  })
+  $(".js-hidden-block-btn").click(function () {
+    $(this).prev(".js-hidden-block").toggleClass("_is-open");
+  });
+
+  $(document).ready(function () {
+    $(".tab-btn").click(function () {
+      const tabId = $(this).data("tab");
+      $(".tab-btn, .tab-pane").removeClass("_is-active");
+      $(this).addClass("_is-active");
+      $(`.tab-pane[data-tab="${tabId}"]`).addClass("_is-active");
+    });
+  });
+
+  $('.js-stats-section').each(function() {
+    const $block = $(this);
+    let animationStarted = false;
+    
+    // Подготовка чисел с плюсами
+    $block.find('.js-stast-number').each(function() {
+        const $number = $(this);
+        const value = $number.data('value');
+        
+        if (value.includes('+')) {
+            $number.html('0<span class="plus">+</span>');
+        }
+    });
+    
+    // Функция анимации числа
+    function animateNumber($element, target) {
+        // const hasPlus = target.includes('+');
+        const numTarget = parseInt(target);
+        const duration = 2000;
+        const startTime = performance.now();
+        // const $plus = $element.find('.plus');
+        
+        function updateNumber(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            const currentValue = Math.floor(progress * numTarget);
+            
+            $element.text(currentValue);
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateNumber);
+            } 
+        }
+        
+        requestAnimationFrame(updateNumber);
+    }
+    
+    // Проверка видимости блока
+    function checkScroll() {
+        if (animationStarted) return;
+        
+        const blockTop = $block.offset().top;
+        const scrollPosition = $(window).scrollTop() + $(window).height() * 0.7;
+        
+        if (scrollPosition > blockTop) {
+            animationStarted = true;
+            $block.find('.js-stats-number').each(function() {
+                const $number = $(this);
+                animateNumber($number, $number.data('value'));
+            });
+        }
+    }
+    
+    // Наблюдатель за скроллом для этого блока
+    $(window).on('scroll', checkScroll);
+    // Проверить сразу при загрузке
+    checkScroll();
+});
 });

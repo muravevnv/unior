@@ -1,0 +1,90 @@
+Названия данных классов можно менять, но нельзя менять расположение. Нельзя добавлять дополнительные классы и менять структуру верстки. (style нельзя тоже)
+catalog_menu -  класс для элементов UL 
+li_class - класс для элементов LI
+a_class - класс для элементов a
+
+open_sub_menu - наличие этого класса у меню делает вложенный блок с UL  видимым. Для открытия вложенного блока у вложенного нужно добавить свой класс open_sub_menu к элементу Li второго уровня
+active_item - класс выделения активного пункта меню. Можно и/или к тегу А или Li
+<ul class="catalog_menu">
+	<li class="li_class open_sub_menu active_item">
+		<a class="a_class active_item">Пункт 1 ОТКРЫТ</a>
+		<span>Элемент при нажатии на который происходит закрытие/открытие вложенного меню</span>
+		<ul class="catalog_menu">
+			<li class="li_class">
+				<a class="a_class">Пункт 1.1</a>
+			</li>
+			<li class="li_class">
+				<a class="a_class">Пункт 1.2</a>
+			</li>
+			<li class="li_class">
+				<a class="a_class">Пункт 1.3</a>
+				<span>Элемент при нажатии на который происходит закрытие/открытие вложенного меню</span>
+				<ul class="catalog_menu">
+					<li class="li_class">
+						<a class="a_class">Пункт 1.3.1</a>
+					</li>
+					<li class="li_class">
+						<a class="a_class">Пункт 1.3.2</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="li_class open_sub_menu active_item">
+				<a class="a_class">Пункт 1.4 ОТКРЫТ <a>
+				<span>Элемент при нажатии на который происходит закрытие/открытие вложенного меню</span>
+				<ul class="catalog_menu">
+					<li class="li_class">
+						<a class="a_class">Пункт 1.4.1</a>
+					</li>
+					<li class="li_class active_item">
+						<a class="a_class">Пункт 1.4.2</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li class="li_class">
+		<a class="a_class">Пункт 2</a>
+	</li>
+	<li class="li_class">
+		<a class="a_class">Пункт 3</a>
+	</li>
+	<li class="li_class  ">
+		<a class="a_class">Пункт 4</a>
+		<span>Элемент при нажатии на который происходит закрытие/открытие вложенного меню</span>
+		<ul class="catalog_menu">
+			<li class="li_class">
+				<a class="a_class">Пункт 4.1</a>
+			</li>
+			<li class="li_class">
+				<a class="a_class">Пункт 4.2</a>
+			</li>
+			<li class="li_class">
+				<a class="a_class">Пункт 4.3</a>
+				<span>Элемент при нажатии на который происходит закрытие/открытие вложенного меню</span>
+				<ul class="catalog_menu">
+					<li class="li_class">
+						<a class="a_class">Пункт 4.3.1</a>
+					</li>
+					<li class="li_class">
+						<a class="a_class">Пункт 4.3.2</a>
+					</li>
+				</ul>
+			</li>
+			<li class="li_class  ">
+				<a class="a_class">Пункт 4.4</a>
+				<span>Элемент при нажатии на который происходит закрытие/открытие вложенного меню</span>
+				<ul class="catalog_menu">
+					<li class="li_class">
+						<a class="a_class">Пункт 4.4.1</a>
+					</li>
+					<li class="li_class ">
+						<a class="a_class">Пункт 4.4.2</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+Нужна адаптивная верстка согласно дизайну + скрипты раскрытия/закрытия меню

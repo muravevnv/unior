@@ -72,10 +72,13 @@
   }
 
   &__profiles {
-    overflow: hidden;
 
-    .swiper-wrapper {
-      align-items: stretch;
+    &-slider {
+      overflow: hidden;
+
+      .swiper-wrapper {
+        align-items: stretch;
+      }
     }
   }
 }
@@ -89,6 +92,7 @@
   padding: 20px;
   border-radius: 10px;
   background-color: #FFFFFF;
+  min-height: 163px;
 
   &__img {
     width: 75px;

@@ -29,6 +29,24 @@
   background-color: #0077C1;
 }
 
+.tab-pane {
+  display: none;
+}
+.tab-pane._is-active {
+  display: block;
+}
+
+.tab-btn._is-active {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-color: var(--main-color);
+}
+
+.input__input--white {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
 .career-hero__top {
   display: flex;
   align-items: flex-start;
@@ -168,10 +186,10 @@
   width: 100%;
   border-radius: 10px;
 }
-.career-about__profiles {
+.career-about__profiles-slider {
   overflow: hidden;
 }
-.career-about__profiles .swiper-wrapper {
+.career-about__profiles-slider .swiper-wrapper {
   align-items: stretch;
 }
 
@@ -184,6 +202,7 @@
   padding: 20px;
   border-radius: 10px;
   background-color: #FFFFFF;
+  min-height: 163px;
 }
 .career-profile-card__img {
   width: 75px;
