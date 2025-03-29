@@ -181,6 +181,21 @@
   display: block;
   width: 100%;
 }
+@media (max-width: 767.98px) {
+  .career-about__img {
+    display: none;
+  }
+}
+.career-about__img-mob {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .career-about__img-mob {
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
 .career-about__img img {
   display: block;
   width: 100%;
@@ -191,6 +206,21 @@
 }
 .career-about__profiles-slider .swiper-wrapper {
   align-items: stretch;
+}
+.career-about__profiles-inner {
+  position: relative;
+}
+.career-about__profiles-prev {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  left: -32px;
+}
+.career-about__profiles-next {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  right: -32px;
 }
 
 .career-profile-card {
@@ -479,23 +509,40 @@
 .personal-reviews {
   position: relative;
 }
-.personal-reviews .swiper-button-prev {
-  left: -20px;
-}
-.personal-reviews .swiper-button-next {
-  right: -20px;
+.personal-reviews__slider-prev {
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @media (max-width: 767.98px) {
-  .personal-reviews .swiper-button-prev,
-  .personal-reviews .swiper-button-next {
+  .personal-reviews__slider-prev {
     display: none;
   }
 }
-.personal-reviews .swiper-button-disabled {
-  display: none;
+.personal-reviews__slider-next {
+  position: absolute;
+  right: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 767.98px) {
+  .personal-reviews__slider-next {
+    display: none;
+  }
 }
 .personal-reviews__slider {
   overflow: hidden;
+}
+.personal-reviews__slider .swiper-pagination {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .personal-reviews__slider .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 24px auto 0;
+  }
 }
 
 .personal-reviews-card {
@@ -579,8 +626,8 @@
   border-radius: 10px;
 }
 .faq-item._is-open {
-  --color-bg: #0077C1;
-  --color-text: #FFFFFF;
+  --color-bg: #e1e1e19c;
+  --color-text: #000000;
 }
 .faq-item._is-open .faq-item__toggler::before {
   opacity: 0;
@@ -673,12 +720,38 @@
 }
 .company-address__slider {
   max-width: 100%;
-  height: 100%;
-  width: calc(50% - 15px);
   overflow: hidden;
 }
+.company-address__slider-prev {
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 767.98px) {
+  .company-address__slider-prev {
+    display: none;
+  }
+}
+.company-address__slider-next {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 767.98px) {
+  .company-address__slider-next {
+    display: none;
+  }
+}
+.company-address__slider-wrapper {
+  max-width: 100%;
+  height: 100%;
+  width: calc(50% - 15px);
+  position: relative;
+}
 @media (max-width: 1023.98px) {
-  .company-address__slider {
+  .company-address__slider-wrapper {
     width: 100%;
   }
 }

@@ -1,28 +1,40 @@
 .personal-reviews {
   position: relative;
 
-  .swiper-button-prev {
-    left: -20px;
-  }
-
-  .swiper-button-next {
-    right: -20px;
-  }
-
-  .swiper-button-prev,
-  .swiper-button-next {
+  &__slider-prev {
+    position: absolute;
+    left: -32px;
+    top: 50%;
+    transform: translateY(-50%);
 
     @media(max-width: 767.98px) {
       display: none;
     }
   }
 
-  .swiper-button-disabled {
-    display: none;
+  &__slider-next {
+    position: absolute;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media(max-width: 767.98px) {
+      display: none;
+    }
   }
 
   &__slider {
     overflow: hidden;
+
+    .swiper-pagination {
+      display: none;
+
+      @media(max-width: 767.98px) {
+        display: flex;
+        justify-content: center;
+        margin: 24px auto 0;
+      }
+    }
   }
 }
 
@@ -89,7 +101,7 @@
     cursor: pointer;
     border-bottom: 1px solid currentColor;
     transition: color 0.25s ease-in, border-color 0.25s ease-in;
-    
+
     @media(any-hover: hover) {
       &:hover {
         color: #72C7F0;

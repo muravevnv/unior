@@ -1,28 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector(".js-profiles-slider")) {
-    const profilesSlider = new Swiper(".js-profiles-slider", {
-      slidesPerView: 2,
-      spaceBetween: 16,
-      pagination: {
-        el: ".js-profiles-slider-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        560: {
-          slidesPerView: 2,
+
+  if(document.querySelectorAll('.js-profiles').length > 0) {
+    const profilesSections = document.querySelectorAll('.js-profiles');
+
+    profilesSections.forEach(section => {
+      const slider = section.querySelector('.js-profiles-slider');
+      const prevButton = section.querySelector('.js-profiles-slider-prev');
+      const nextButton = section.querySelector('.js-profiles-slider-next');
+
+      const profilesSlider = new Swiper(slider, {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        pagination: {
+          el: ".js-profiles-slider-pagination",
+          clickable: true,
         },
-        768: {
-          slidesPerView: 2,
+        navigation: {
+          nextEl: nextButton,
+          prevEl: prevButton,
         },
-        992: {
-          slidesPerView: 4,
-          spaceBetween: 24,
+        breakpoints: {
+          560: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
         },
-        1200: {
-          slidesPerView: 5,
-          spaceBetween: 30,
-        },
-      },
+      })
     });
   }
 
@@ -83,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $(".accordion-header").click(function () {
     // Закрываем все, кроме текущего
     $(".accordion-content").not($(this).next()).slideUp();
-
+    $(this).parent().siblings().removeClass("_is-open");
     // Открываем/закрываем текущий
     $(this).parent().toggleClass("_is-open");
     $(this).next(".accordion-content").slideToggle();
@@ -102,62 +115,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  $('.js-stats-section').each(function() {
-    const $block = $(this);
-    let animationStarted = false;
-    
-    // Подготовка чисел с плюсами
-    $block.find('.js-stast-number').each(function() {
-        const $number = $(this);
-        const value = $number.data('value');
-        
-        if (value.includes('+')) {
-            $number.html('0<span class="plus">+</span>');
-        }
-    });
-    
-    // Функция анимации числа
-    function animateNumber($element, target) {
-        // const hasPlus = target.includes('+');
-        const numTarget = parseInt(target);
-        const duration = 2000;
-        const startTime = performance.now();
-        // const $plus = $element.find('.plus');
-        
-        function updateNumber(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / duration, 1);
-            const currentValue = Math.floor(progress * numTarget);
-            
-            $element.text(currentValue);
-            
-            if (progress < 1) {
-                requestAnimationFrame(updateNumber);
-            } 
-        }
-        
-        requestAnimationFrame(updateNumber);
-    }
-    
-    // Проверка видимости блока
-    function checkScroll() {
-        if (animationStarted) return;
-        
-        const blockTop = $block.offset().top;
-        const scrollPosition = $(window).scrollTop() + $(window).height() * 0.7;
-        
-        if (scrollPosition > blockTop) {
-            animationStarted = true;
-            $block.find('.js-stats-number').each(function() {
-                const $number = $(this);
-                animateNumber($number, $number.data('value'));
-            });
-        }
-    }
-    
-    // Наблюдатель за скроллом для этого блока
-    $(window).on('scroll', checkScroll);
-    // Проверить сразу при загрузке
-    checkScroll();
-});
+  // $(".js-stats-section").each(function () {
+  //   const $block = $(this);
+  //   let animationStarted = false;
+
+  //   // Подготовка чисел с плюсами
+  //   $block.find(".js-stast-number").each(function () {
+  //     const $number = $(this);
+  //     const value = $number.data("value");
+  //   });
+
+  //   function animateNumber($element, target) {
+  //     const numTarget = parseInt(target);
+  //     const duration = 2000;
+  //     const startTime = performance.now();
+
+  //     function updateNumber(currentTime) {
+  //       const elapsedTime = currentTime - startTime;
+  //       const progress = Math.min(elapsedTime / duration, 1);
+  //       const currentValue = Math.floor(progress * numTarget);
+
+  //       $element.text(currentValue);
+
+  //       if (progress < 1) {
+  //         requestAnimationFrame(updateNumber);
+  //       }
+  //     }
+
+  //     requestAnimationFrame(updateNumber);
+  //   }
+
+  //   function checkScroll() {
+  //     if (animationStarted) return;
+
+  //     const blockTop = $block.offset().top;
+  //     const scrollPosition = $(window).scrollTop() + $(window).height() * 0.7;
+
+  //     if (scrollPosition > blockTop) {
+  //       animationStarted = true;
+  //       $block.find(".js-stats-number").each(function () {
+  //         const $number = $(this);
+  //         animateNumber($number, $number.data("value"));
+  //       });
+  //     }
+  //   }
+
+  //   $(window).on("scroll", checkScroll);
+  //   checkScroll();
+  // });
 });

@@ -64,6 +64,20 @@
     display: block;
     width: 100%;
 
+    @media(max-width: 767.98px) {
+      display: none;
+    }
+
+    &-mob {
+      display: none;
+
+      @media(max-width: 767.98px) {
+        display: block;
+        width: 100%;
+        margin-bottom: 24px;
+      }
+    }
+
     img {
       display: block;
       width: 100%;
@@ -79,6 +93,24 @@
       .swiper-wrapper {
         align-items: stretch;
       }
+    }
+
+    &-inner {
+      position: relative;
+    }
+
+    &-prev {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      left: -32px;
+    }
+
+    &-next {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      right: -32px;
     }
   }
 }
