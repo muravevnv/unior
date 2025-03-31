@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
         el: ".js-companies-address-slider-pagination",
         clickable: true,
       },
+      navigation: {
+        nextEl: ".js-companies-address-slider-next",
+        prevEl: ".js-companies-address-slider-prev",
+      },
     });
   }
 

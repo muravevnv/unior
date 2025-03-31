@@ -47,6 +47,10 @@
   border-color: #FFFFFF;
 }
 
+.slider-control {
+  cursor: pointer;
+}
+
 .career-hero__top {
   display: flex;
   align-items: flex-start;
